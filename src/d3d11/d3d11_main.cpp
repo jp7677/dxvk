@@ -8,8 +8,10 @@
 #include "d3d11_enums.h"
 #include "d3d11_interop.h"
 
+#include "../util/util_str.h"
+
 namespace dxvk {
-  Logger Logger::s_instance("d3d11.log");
+  Logger Logger::s_instance(xstr(LOGGER_FILENAME));
 }
   
 extern "C" {
