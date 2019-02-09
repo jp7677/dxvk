@@ -18,6 +18,7 @@ d3d10_core_dll = shared_library('d3d10core'+dll_ext, d3d10_main_src, d3d10_core_
   install             : true,
   objects             : not dxvk_msvc ? 'd3d10core'+def_spec_ext : [],
   vs_module_defs      : 'd3d10core'+def_spec_ext,
+  cpp_args            : '-DLOGGER_FILENAME=d3d10core.log',
   override_options    : ['cpp_std='+dxvk_cpp_std])
 
 d3d10_dll = shared_library('d3d10'+dll_ext, d3d10_main_src, d3d10_res,
@@ -27,6 +28,7 @@ d3d10_dll = shared_library('d3d10'+dll_ext, d3d10_main_src, d3d10_res,
   install             : true,
   objects             : not dxvk_msvc ? 'd3d10'+def_spec_ext : [],
   vs_module_defs      : 'd3d10'+def_spec_ext,
+  cpp_args            : '-DLOGGER_FILENAME=d3d10.log',
   override_options    : ['cpp_std='+dxvk_cpp_std])
 
 d3d10_1_dll = shared_library('d3d10_1'+dll_ext, d3d10_main_src, d3d10_1_res,
@@ -36,6 +38,7 @@ d3d10_1_dll = shared_library('d3d10_1'+dll_ext, d3d10_main_src, d3d10_1_res,
   install             : true,
   objects             : not dxvk_msvc ? 'd3d10_1'+def_spec_ext : [],
   vs_module_defs      : 'd3d10_1'+def_spec_ext,
+  cpp_args            : '-DLOGGER_FILENAME=d3d10_1.log',
   override_options    : ['cpp_std='+dxvk_cpp_std])
 
 d3d10_dep = declare_dependency(
